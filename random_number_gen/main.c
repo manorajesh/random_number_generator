@@ -14,6 +14,7 @@ int main(void)
     long int i, l = 0;      // Random numbers
     char key[MAXLINE];      // Output character array
 
+    printf(">");
     i = clock();            // Cycles since epoch
     while ((c = getchar()) != '\n' || counter > MAXLINE) {
         i += clock();       // Adding previous random number greatly increases entropy
@@ -30,4 +31,5 @@ void keygen(long int randnum1, long int randnum2, char key[])
 
     key[counter++] = avaichar[(randnum1 + randnum2) % CHARLENGTH];  // Adding greatly increases entropy
     // printf("\n%ld, %ld, %ld\n", randnum1, randnum2, ((randnum1+randnum2)%CHARLENGTH));   // debugging (shows pattern)
+    printf("\n%ld\n", ((randnum1 + randnum2) % CHARLENGTH));
 }
